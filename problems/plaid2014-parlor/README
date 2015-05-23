@@ -2,6 +2,8 @@ Source: https://github.com/pwning/plaidctf2014/tree/master/crypto/parlor
 
 Type: Hash Length Extension
 
+Solution: http://blog.mheistermann.de/2014/04/14/plaidctf-2014-parlor-crypto-250-writeup/
+
 
 Original text:
 A simple betting game.
