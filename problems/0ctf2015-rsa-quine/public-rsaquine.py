@@ -3,7 +3,7 @@
 import signal
 from helper import gen_param
 
-FLAG = "0ctf{I_br1ng_5alt_f0r_my_53lf}"
+FLAG = "REDACTED"
 
 def input_int(prompt=''):
     try:

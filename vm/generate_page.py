@@ -14,9 +14,17 @@ try:
     hint = markdown.markdown(codecs.open(pdir + "/hint.md", encoding='utf-8', mode='r').read())
     solution = markdown.markdown(codecs.open(pdir + "/solution.md", encoding='utf-8', mode='r').read())
     flagtxt = open(pdir + "/flag.txt", 'r').read().strip()
+    configtxt = open(pdir + "/config.txt", 'r').readlines()
 except IOError:
     print("Unable to find some files for this problem! Bailing...")
     exit(-1)
+
+
+for l in configtxt:
+    if l.startswith("ENABLED"):
+        if "FALSE" in l:
+            print("Problem is disabled")
+            exit(1)
 
 pname = sys.argv[1].split("/")[-1].replace("_", " ")
 
