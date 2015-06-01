@@ -36,7 +36,7 @@ Each problem dir should contain:
 * Preface all files with problem name, including ctf
 
 # Config syntax
-PORT: number
+PORT: number-or-NONE
 
 CATEGORY: no-spaces-string
 
