@@ -1,17 +1,18 @@
 #!/usr/bin/env python2
-
+from __future__ import unicode_literals
 import markdown
 import os
 import sys
+import codecs
 
 
 
 pdir = sys.argv[1]
 
 try:
-    desc = markdown.markdown(open(pdir + "/description.md", 'r').read())
-    hint = markdown.markdown(open(pdir + "/hint.md", 'r').read())
-    solution = markdown.markdown(open(pdir + "/solution.md", 'r').read())
+    desc = markdown.markdown(codecs.open(pdir + "/description.md", encoding='utf-8', mode='r').read())
+    hint = markdown.markdown(codecs.open(pdir + "/hint.md", encoding='utf-8', mode='r').read())
+    solution = markdown.markdown(codecs.open(pdir + "/solution.md", encoding='utf-8', mode='r').read())
     flagtxt = open(pdir + "/flag.txt", 'r').read().strip()
 except IOError:
     print("Unable to find some files for this problem! Bailing...")
@@ -45,7 +46,7 @@ Solution <input type="button" onclick="blocktoggle('solution');" id="showsolutio
 
 os.system("mkdir /var/www/html/" + pname)
 
-of = open("/var/www/html/" + pname + "/index.html", 'w')
+of = codecs.open("/var/www/html/" + pname + "/index.html", encoding='utf-8', mode='w')
 
 of.write(page)
 of.close()
