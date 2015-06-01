@@ -31,6 +31,7 @@ page = """
 </head>
 <body>
     <script src="/stuff.js"></script>
+<h1>{title}</h1>
 {desc}<br>
 Hint <input type="button" onclick="javascript:blocktoggle('hint');" id="showhint" value="Show"/><br>
 <div id=hint style=display:none>{hint}</div>
