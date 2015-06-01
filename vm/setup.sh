@@ -12,7 +12,7 @@ pip install markdown
 mkdir /var/www/html/files
 
 # Copy the js
-cp /vagrant/interface/stuff.js /var/www/html/
+cp -r /vagrant/interface/* /var/www/html/
 
 # For each problem do some things
 for d in `find /vagrant/problems/ -type d`; do
