@@ -7,5 +7,5 @@ files=("ciphertext" "oldcrypto.py")
 for fname in "${files[@]}"
 do
 #	mkdir -p /var/www/html/$PROBLEM
-	cp /vagrant/problems/$PROBLEM/$fname /var/www/html/$PROBLEM/$PROBLEM_$fname
+	cp /vagrant/problems/$PROBLEM/$fname /var/www/html/$PROBLEM/$PROBLEM\_$fname
 done
