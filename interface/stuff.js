@@ -8,3 +8,14 @@ function blocktoggle(thing) {
         document.getElementById('show'+thing).value="Hide";
     }
 }
+
+
+function flagcheck(flag){
+    usrinput = document.getElementById('guess').value
+    if (flag === usrinput) {
+        document.getElementById("success").innerHTML="Good job!"
+    }
+    else {
+        document.getElementById("success").innerHTML="Try again :("
+    }
+}
