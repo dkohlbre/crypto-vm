@@ -55,7 +55,7 @@ class incoming(SocketServer.BaseRequestHandler):
 
     while True:
       if self.monies >= 1000000000:
-        self.request.send("Holy shit you have a lot of money. Here's a key: hashed_that_cash\n")
+        self.request.send("Holy shit you have a lot of money. Here's a key: XXXXXXXXXXXXXXX\n")
       self.request.send(options)
       m = getn(self.request)
       if m == 1:
@@ -99,3 +99,4 @@ server.timeout = 4
 server_thread = threading.Thread(target=server.serve_forever)
 server_thread.daemon = False
 server_thread.start()
+

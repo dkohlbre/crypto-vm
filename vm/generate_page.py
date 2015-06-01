@@ -15,6 +15,7 @@ try:
     flagtxt = open(pdir + "/flag.txt", 'r').read().strip()
 except IOError:
     print("Unable to find some files for this problem! Bailing...")
+    exit(-1)
 
 pname = sys.argv[1].split("/")[-1].replace("_", " ")
 
