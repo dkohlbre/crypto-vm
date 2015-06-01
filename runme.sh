@@ -14,9 +14,10 @@ if ! hash vagrant 2>/dev/null; then
 fi
 
 
-# TODO get port info!
+# Setup ports
+cd vm
+./ports.py
 
 
 # Run the vagrant script!
-cd vm
 vagrant up

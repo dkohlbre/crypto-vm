@@ -22,12 +22,13 @@ Each problem dir should contain:
   * one line of ONLY THE EXACT FLAG TO BE MATCHED. Flag may not contain newlines, all other characters will be treated as part of the flag.
 * config.txt
   * key-value pairs
-  * port
   * category
 * other files as needed for problem
   * service.py
   * foo.txt
 
+# Ports
+Add any ports you need accessible to the 'ports' file. Don't use a port already on that list!
 
 # Notes
 * Please include a windows-style file extension to all filenames
@@ -36,8 +37,6 @@ Each problem dir should contain:
 * Preface all files with problem name, including ctf
 
 # Config syntax
-PORT: number-or-NONE
-
 CATEGORY: no-spaces-string
 
 Thats it for now
