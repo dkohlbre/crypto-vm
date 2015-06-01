@@ -16,6 +16,6 @@ cp /vagrant/interface/stuff.js /var/www/html/
 
 # For each problem do some things
 for d in `find /vagrant/problems/ -type d`; do
-$d/setup.sh
-/vagrant/vm/generate_page.py $d
+echo "Running $d setup"
+$d/setup.sh && /vagrant/vm/generate_page.py $d
 done
