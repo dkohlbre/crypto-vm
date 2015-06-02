@@ -19,14 +19,18 @@ except IOError:
     print("Unable to find some files for this problem! Bailing...")
     exit(-1)
 
+category = ""
 
 for l in configtxt:
     if l.startswith("ENABLED"):
         if "FALSE" in l:
             print("Problem is disabled")
             exit(1)
+    if l.startswith("CATEGORY"):
+        category = l.split("CATEGORY: ")[-1].strip()
 
-pname = sys.argv[1].split("/")[-1].replace("_", " ")
+basepname = sys.argv[1].split("/")[-1]
+pname = basepname.replace("_", " ")
 
 args = {'title': pname, 'desc': desc, 'hint': hint, 'solution': solution, 'flagtxt': flagtxt}
 page = """
@@ -59,4 +63,14 @@ of = codecs.open("/var/www/html/" + pname + "/index.html", encoding='utf-8', mod
 of.write(page)
 of.close()
 
-print("Problem setup complete")
+print "Problem \""+pname+"\" setup complete"
+
+
+# Handle category stuff
+category = category.replace(" ","_")
+if category == "":
+    print "No category for problem \""+pname+"\", it will be in MISC."
+    category = "misc"
+
+cfile = open("tmp_cat_"+category,"a")
+cfile.write(basepname+"\n")
