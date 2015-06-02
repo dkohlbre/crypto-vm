@@ -8,7 +8,7 @@ files=("redacted-server.py")
 for fname in "${files[@]}"
 do
 #	mkdir -p /var/www/html/$PROBLEM
-a	cp /vagrant/problems/$PROBLEM/$fname /var/www/html/$PROBLEM/$PROBLEM\_$fname
+	cp /vagrant/problems/$PROBLEM/$fname /var/www/html/$PROBLEM/$PROBLEM\_$fname
 done
 
 # setup an init
