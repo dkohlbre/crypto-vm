@@ -42,4 +42,25 @@ for cat in categories:
     cfile.close()
 
 
-# todo build category listing page
+# Build mainpage!
+clist =  ''.join(["<a href=\"/"+c.strip()+".html\">"+c.replace("_"," ").strip()+"</a></br>\n" for c in categories])
+ifile = open("/var/www/html/index.html",'w')
+args = {'title': "Categories", 'clist': clist}
+page = """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{title}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link type="text/css" rel="stylesheet" href="/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="/css/pilcrow.css" />
+    <link type="text/css" rel="stylesheet" href="/css/hljs-github.min.css"/>
+</head>
+<body>
+    <script src="/stuff.js"></script>
+<h1>{title}</h1>
+{clist}
+</body>
+</html>""".format(**args)
+ifile.write(page)
+ifile.close()
