@@ -8,6 +8,6 @@ requests the odds the user wants and then the user's guess. If
 To verify the server isn't cheating, the user can request for the server\_nonce
 to be displayed, which will also reset the server\_nonce to something else.
 
-Get a copy of the server (with the flag removed!) [here](redacted_server.py).
+Get a copy of the server (with the flag removed!) [here](/plaid2014-parlor-redacted_server.py).
 
 Try to get the server running on port 4321 to give you a flag!
