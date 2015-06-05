@@ -78,7 +78,7 @@ page = """
     </div>
     <div>
         <h2>Solution</h2>
-        <button type="button" class="btn btn-primary" onclick="blocktoggle('solution');" id="showsolution" value="Show" style="margin-bottom: 1em;"/>
+        <button type="button" class="btn btn-primary" onclick="blocktoggle('solution');" id="showsolution" value="Show" style="margin-bottom: 1em;">Show</button>
         <br>
         <div id=solution class="well" style=display:none>{solution}</div>
     </div>
