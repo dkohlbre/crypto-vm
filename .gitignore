@@ -189,4 +189,4 @@ sympy-plots-for-*.tex/
 paper/proposal.pdf
 vm/Vagrantfile
 vm/.vagrant
-*~
+*tmp_cat_*

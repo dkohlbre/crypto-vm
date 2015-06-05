@@ -13,9 +13,13 @@ function blocktoggle(thing) {
 function flagcheck(flag){
     usrinput = document.getElementById('guess').value
     if (flag === usrinput) {
-        document.getElementById("success").innerHTML="<font color=\"green\">Good job!</font>"
+        document.getElementById("success").innerHTML='<div class="alert alert-success" role="alert">'+
+        '<strong>Well done!</strong> You got the flag =)'+
+      '</div>'
     }
     else {
-        document.getElementById("success").innerHTML="<font color=\"red\">Try again :(</font>"
+        document.getElementById("success").innerHTML='<div class="alert alert-danger" role="alert">'+
+        '<strong>Oh snap!</strong> Change a few things up and try submitting again.'+
+      '</div>'
     }
 }

@@ -39,19 +39,49 @@ page = """
 <head>
     <title>{title}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap-theme.min.css"/>
     <link type="text/css" rel="stylesheet" href="/css/style.css" />
     <link type="text/css" rel="stylesheet" href="/css/pilcrow.css" />
     <link type="text/css" rel="stylesheet" href="/css/hljs-github.min.css"/>
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 </head>
 <body>
     <script src="/stuff.js"></script>
-<h1>{title}</h1>
-{desc}<br>
-Hint <input type="button" onclick="javascript:blocktoggle('hint');" id="showhint" value="Show"/><br>
-<div id=hint style=display:none>{hint}</div>
-Flag: <input id="guess"/><br/>\n<input type="button" onclick="flagcheck('{flagtxt}');" value="Submit"/><div id="success"></div><br/>
-Solution <input type="button" onclick="blocktoggle('solution');" id="showsolution" value="Show"/><br>
-<div id=solution style=display:none>{solution}</div>
+
+    <h1 class="page-header">{title}</h1>
+    <div class="well">
+        {desc}
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+          <button type="button" class="btn btn-default btn-small spoiler-trigger" data-toggle="collapse"
+          onclick="javascript:{{$(this).parent().next().collapse('toggle');}}" style="font-weight: bold;">Hints</button>
+        </div>
+        <div class="panel-collapse collapse out">
+          <div class="panel-body">
+            {hint}
+          </div>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h2>Flag:</h2>
+        <form class="form-inline" role="form">
+            <input type="text" class="form-control" id="guess" placeholder="your flag" style="width: 25em;">
+            <button type="button" class="btn btn-primary" onclick="flagcheck('{flagtxt}');">Submit</button>
+        </form>
+        <br>
+        <div id="success"></div>
+    </div>
+    <div>
+        <h2>Solution</h2>
+        <button type="button" class="btn btn-primary" onclick="blocktoggle('solution');" id="showsolution" value="Show" style="margin-bottom: 1em;"/>
+        <br>
+        <div id=solution class="well" style=display:none>{solution}</div>
+    </div>
 </body>
 </html>
 """.format(**args)
