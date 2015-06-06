@@ -43,9 +43,10 @@ for cat in categories:
 
 
 # Build mainpage!
+mpage = markdown.markdown(open("/vagrant/interface/frontpage.md",'r').read())
 clist =  ''.join(["<a href=\"/"+c.strip()+".html\">"+c.replace("_"," ").strip()+"</a></br>\n" for c in categories])
 ifile = open("/var/www/html/index.html",'w')
-args = {'title': "Categories", 'clist': clist}
+args = {'title': "Categories", 'clist': clist, 'info': mpage}
 page = """
 <!DOCTYPE html>
 <html>
@@ -58,6 +59,9 @@ page = """
 </head>
 <body>
     <script src="/stuff.js"></script>
+
+{info}
+
 <h1>{title}</h1>
 {clist}
 </body>
