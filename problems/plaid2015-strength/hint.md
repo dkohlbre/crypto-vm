@@ -6,4 +6,5 @@ Hints:
 
 Suggested Reading:
 
-* TODO
+* http://en.wikipedia.org/wiki/RSA_%28cryptosystem%29
+* http://math.arizona.edu/sites/math.arizona.edu/files/webfm/undergrad/uta/Spring12UTATalkSalterbergJake.pdf
