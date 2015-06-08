@@ -1,0 +1,208 @@
+\documentclass[10pt, conference, compsocconf,hyphens]{IEEEtran}
+\usepackage{mathptmx}
+\usepackage{amsmath}
+%\usepackage{mathtools}
+\usepackage{courier}
+\usepackage[scaled=.92]{helvet}
+
+\usepackage[pdfborder={0 0 0},bookmarks=false,breaklinks,draft]{hyperref}
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{xspace}
+\usepackage{listings}
+\usepackage{booktabs,tabularx}
+\usepackage[numbers,sort]{natbib}
+\usepackage{ragged2e}
+\usepackage{tikz}
+\usepackage{dcolumn}
+\usepackage{dsfont}
+\usepackage{pdfpages}
+\usepackage{listings}
+
+\lstset{language=C,basicstyle=\ttfamily,xleftmargin=2em}
+
+\iffalse % Change to \iffalse for submission
+\usepackage{datetime}
+\usepackage{fancyhdr}
+\fancypagestyle{IEEEtitlepagestyle}{%
+\fancyhead{}
+\fancyfoot[L]{\textcolor{red}{\bfseries DRAFT}}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\textcolor{red}{\bfseries\currenttime\ \today}}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}}
+\pagestyle{IEEEtitlepagestyle}
+\fi
+\usepackage{flushend}
+
+\usepackage[binary-units]{siunitx}
+\usepackage{subcaption}
+\usepackage{multirow}
+%\usepackage[title,header]{appendix}
+\usepackage{lipsum}
+\usepackage[absolute]{textpos}
+\usepackage[T1]{fontenc}
+
+\providecommand{\st}{\ensuremath{\mathrm{\ s.t.\ }}}
+
+\providecommand{\bagmap}{\texttt{bagmap}}
+\providecommand{\bagsum}{\texttt{bagsum}}
+\providecommand{\bagsize}{\texttt{bagsize}}
+\providecommand{\bagsplit}{\texttt{bagsplit}}
+
+\providecommand{\lone}{\ensuremath{\ell{}_1}}
+
+\hyphenation{white-list}
+
+% taken from hs's mary.tex, and tracing back to knuth.
+\def\dash---{\kern.16667em---\penalty\exhyphenpenalty\hskip.16667em\relax}
+
+% C++ macro from john mitchell
+\def\CC{C\raise.22ex\hbox{{\footnotesize +}}\raise.22ex\hbox{\footnotesize +}\xspace}
+
+% Make URLs linebreak better (hat-tip alexras)
+  % A sequence of BigBreaks will be treated as one break, so it will only be able to break after ://
+  \renewcommand{\UrlBigBreaks}{\do\:\do\/}
+  % (Less aggressive) Treat both / and - as breakable characters (don't know why this does something different than hyphens in the package declaration, but it does)
+  \renewcommand{\UrlBreaks}{\do\/\do\-}
+  % (More aggressive) Any letter and / are treated as breakable characters
+  \renewcommand{\UrlBreaks}{\do\/\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z}
+
+\lstdefinelanguage{JavaScript}{
+  morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morestring=[b]'',
+  morestring=[b]'
+}
+
+\lstdefinelanguage{HTML5}{
+        language=html,
+        sensitive=true,
+        alsoletter={<>=-},
+        otherkeywords={
+        % HTML tags
+        <feConvolveMatrix, />
+        },
+        ndkeywords={
+        % General
+        =,
+        % HTML attributes
+        charset=, id=, width=, height=, in=, order=, edgeMode=, kernelMatrix=, preserveAlpha=,
+        % CSS properties
+        border:, transform:, -moz-transform:, transition-duration:, transition-property:, transition-timing-function:,
+        },
+        morecomment=[s]{<!--}{-->},
+        tag=[s]
+}
+
+\lstset{%
+    % Code
+    language=HTML5,
+    alsolanguage=JavaScript,
+    showstringspaces=false,
+    extendedchars=true,
+    breaklines=true
+ }
+
+\providecommand{\setjmp}{\texttt{setjmp}}
+\providecommand{\longjmp}{\texttt{longjmp}}
+
+% Alter some LaTeX defaults for better treatment of figures:
+    % See p.105 of "TeX Unbound" for suggested values.
+    % See pp. 199-200 of Lamport's "LaTeX" book for details.
+    %   General parameters, for ALL pages:
+    \renewcommand{\topfraction}{0.99}    % max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.8} % max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{4}
+    \setcounter{totalnumber}{6}         % 2 may work better
+    \setcounter{dbltopnumber}{6}        % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.99} % fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.07}  % allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}  % require fuller float pages
+    % N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7} % require fuller float pages
+
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{10mm}{10mm}
+
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% get rid of that stupid box on the first page.
+\makeatletter
+\def\@copyrightspace{}
+\makeatother
+
+% Support cool highlighting boxes in lstlisting (from
+% http://tex.stackexchange.com/questions/15237/highlight-text-in-code-listing-while-also-keeping-syntax-highlighting)
+\makeatletter
+\newenvironment{btHighlight}[1][]
+{\begingroup\tikzset{bt@Highlight@par/.style={#1}}\begin{lrbox}{\@tempboxa}}
+{\end{lrbox}\bt@HL@box[bt@Highlight@par]{\@tempboxa}\endgroup}
+
+\newcommand\todo[1]{\textcolor{red}{TODO:#1}}
+
+\newcommand\btHL[1][]{%
+  \begin{btHighlight}[#1]\bgroup\aftergroup\bt@HL@endenv%
+}
+\def\bt@HL@endenv{%
+  \end{btHighlight}%
+  \egroup
+}
+\newcommand{\bt@HL@box}[2][]{%
+  \tikz[#1]{%
+    \pgfpathrectangle{\pgfpoint{1pt}{0pt}}{\pgfpoint{\wd #2}{\ht #2}}%
+    \pgfusepath{use as bounding box}%
+    \node[anchor=base west, fill=orange!30,outer sep=0pt,inner xsep=1pt, inner ysep=0pt, rounded corners=3pt, minimum height=\ht\strutbox+1pt,#1]{\raisebox{1pt}{\strut}\strut\usebox{#2}};
+  }%
+}
+\lstdefinestyle{Chighlight}{
+    language={C},basicstyle=\ttfamily,
+    moredelim=**[is][\btHL]{`}{`},
+    moredelim=**[is][{\btHL[fill=green!30,draw=red,dashed,thin]}]{@}{@},
+}
+\makeatother
+
+
+% support aligning a table column on .
+\newcolumntype{d}[1]{D{.}{.}{#1} }
+
+\def\sharedaffiliation{
+\end{tabular}
+\begin{tabular}{c}}
+\begin{document}
+
+
+\title{Crypto-vm: A self hosted introduction to cryptography puzzles}
+
+\author{
+\IEEEauthorblockN{David Kohlbrenner, Benjamin Braun}
+\IEEEauthorblockA{
+University of California, San Diego\\
+}
+}
+
+
+\clubpenalty=10000
+\widowpenalty=10000
+
+\maketitle
+
+\input{introduction}
+\input{methods}
+\input{conclusion}
+
+{\small
+\bibliographystyle{IEEEtranSN}
+\bibliography{final}
+}
+
+\typeout{}
+
+\end{document}
