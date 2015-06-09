@@ -14,5 +14,15 @@ done
 # setup an init
 cp /vagrant/problems/$PROBLEM/$PROBLEM.init /etc/init.d/$PROBLEM
 
+# setup the service
+files=("server.py")
+#Copy service files over
+for fname in "${files[@]}"
+do
+	mkdir -p /home/vagrant/problems/$PROBLEM
+	cp /vagrant/problems/$PROBLEM/$fname /home/vagrant/problems/$PROBLEM/$fname
+done
+
 #start it
+update-rc.d $PROBLEM defaults
 service $PROBLEM start &

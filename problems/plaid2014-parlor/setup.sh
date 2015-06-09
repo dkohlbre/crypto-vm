@@ -1,10 +1,28 @@
 #!/bin/bash
 
-# copy the redacted server file
-cp /vagrant/problems/plaid2014-parlor/public-server.py /var/www/html/plaid2014-parlor/plaid2014-parlor-redacted-server.py
+PROBLEM="plaid2014-parlor"
+files=("redacted-server.py")
+
+# Just copy the data file to the webdir
+for fname in "${files[@]}"
+do
+#	mkdir -p /var/www/html/$PROBLEM
+	cp /vagrant/problems/$PROBLEM/$fname /var/www/html/$PROBLEM/$PROBLEM\_$fname
+done
+
 
 # setup the init script
-cp /vagrant/problems/plaid2014-parlor/plaid2014-parlor.init /etc/init.d/plaid2014-parlor
+cp /vagrant/problems/$PROBLEM/$PROBLEM.init /etc/init.d/$PROBLEM
+
+# setup the service
+files=("server.py")
+#Copy service files over
+for fname in "${files[@]}"
+do
+	mkdir -p /home/vagrant/problems/$PROBLEM
+	cp /vagrant/problems/$PROBLEM/$fname /home/vagrant/problems/$PROBLEM/$fname
+done
 
 # Start the service
-service plaid2014-parlor start &
+update-rc.d $PROBLEM defaults
+service $PROBLEM start &
