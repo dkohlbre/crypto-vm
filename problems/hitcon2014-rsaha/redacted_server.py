@@ -58,7 +58,7 @@ def main():
             exit()
 
     bits = 512.512
-    m = int("HITCON{RSA is a really secure algorithm, right?}".encode('hex'), 16)
+    m = int("*****************************".encode('hex'), 16)
     encrypt(bits, m)
     print "\033[32;1mGood Luck!\033[0m"
 

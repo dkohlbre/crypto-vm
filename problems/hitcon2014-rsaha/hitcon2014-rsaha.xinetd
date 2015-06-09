@@ -1,0 +1,10 @@
+service hitcon2014-rsaha
+{
+         flags           = REUSE
+         socket_type     = stream
+         wait            = no
+         user            = root
+         server          = /home/vagrant/problems/hitcon2014-rsaha/server.py
+         disable         = no
+         protocol        = tcp
+}

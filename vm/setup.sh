@@ -5,6 +5,7 @@ apt-get install apache2 -y
 apt-get install python2.7 -y
 apt-get install markdown -y
 apt-get install python-pip -y
+apt-get install xinetd -y
 
 pip install markdown
 
