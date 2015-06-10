@@ -72,6 +72,7 @@ if srv == 'y':
         f.write(port+"\n")
 
 print "Fill out the PUBLIC files to copy in the setup.sh file"
+print "Fill out the flag.txt file with the exact flag expected."
 with open(name+"/setup.sh",'w') as f:
     f.write(bconf)
 
