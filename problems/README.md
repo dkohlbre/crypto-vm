@@ -3,6 +3,11 @@ Each problem should get its own directory!
 
 Name directory as ctfnameandyear-problem
 
+# Setup script
+You can use new_problem.py to setup basic problems
+(mostly) completely. It will create all the relevant markdown files
+and most of the setup script you need. Make sure to read the rest of this and fill out anything the script tells you to!
+
 # Setups
 
 Each problem dir should contain:

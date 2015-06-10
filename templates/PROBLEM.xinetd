@@ -1,0 +1,13 @@
+# Fill in PROBLEM with the full problem name
+# Fill in SERVER with the server binary/script
+
+service PROBLEM
+{
+         flags           = REUSE
+         socket_type     = stream
+         wait            = no
+         user            = root
+         server          = /home/vagrant/problems/PROBLEM/SERVER
+         disable         = no
+         protocol        = tcp
+}
