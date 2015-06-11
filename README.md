@@ -15,7 +15,7 @@ will need the following:
 After you've met the requirements, clone this repository and run
 "runme.sh"!  This may take some time, but should automatically import,
 configure, and run the VM containing all of the challenges.  After
-this setup completes, you can visit the server at "localhost:8080".
+this setup completes, you can visit the server at "localhost:8082".
 
 For some problems it is likely you will want mathematical tools, such
 as Mathmatica or similar. Python with Crypto-vm does not currently supply any

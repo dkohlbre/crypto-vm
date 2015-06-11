@@ -11,11 +11,19 @@ Each CTF problem has a strictly defined structure to allow for automated page ge
   \item A setup script to register and start any necessary services and copy required public files, for example source code or ciphertexts, to the webserver directory. 
   \item A description markdown file that is similar to a typical CTF problem description, but a little more detailed and helpful, to make the problem more accessible to our target audience.
   \item A hints markdown file that includes helpful pointer in the right direction to help beginners. It should also include a section with recommended background reading material that help familiarize with the type of problem without directly giving the answer. If applicable, this can also include references to tools or libraries that can be helpful for solving the problem.
-  \item A solution markdown file. Preferably, this should include an easy to follow explenation of a solution to the problem. It is also acceptable to link to an external writeup of the problem, but then a cached PDF version of the writeup needs to be included to make sure that a solution is always accessible.
+  \item A solution markdown file. Preferably, this should include an easy to follow explanation of a solution to the problem. It is also acceptable to link to an external writeup of the problem, but then a cached PDF version of the writeup needs to be included to make sure that a solution is always accessible.
   \item A file containing the flag that will be matched on the page.
   \item A configuration file describing the category of the problem and other configuration values.
   \item If needed, additional file required for solving the problem, for example source code, ciphertexts, or xinetd configuration files.
 \end{itemize}
 
 To make it easier to add new problems, we have created a setup script that guides through the process of adding a new problem to the VM by generating a template with all the required files.
+
+When setting up the VM, the page generation script is executed for every problem directory. This script generates a HTML page for each problem using a template and the previously described Markdown input files. An additional script crawls the port configuration file of the problems and generates Vagrant port mappings to forward these from the VM to the local host running the VM.
+
+To get started with \cvm a user only needs a machine running Linux or OS X with Vagrant, Python, and VirtualBox installed. Having met those requirements, one only needs to clone our repository and run the \verb|runme.sh| script. This will then automatically using our scripts import, confiugre, and run the VM containing all the challenges. After the setup completes, the webserver is started and the \cvm  is accessible on \url{http://localhost:8082}. 
+
+We have chosen not to provide any tools with the VM, but rather point the user to helpful tools and libraries in the hints section of each problem. All problems are solvable using Python with some mathematical or cryptographic libraries that we point to whenever fit for the problem. However, the choice of tools is left to the user.
+
+We think that this methodology provides an easy to use and helpful ressource to make cryptographic CTF challenges more accesssible for beginners.
 
