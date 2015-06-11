@@ -21,6 +21,17 @@ For some problems it is likely you will want mathematical tools, such
 as Mathmatica or similar. Python with Crypto-vm does not currently supply any
 tools, you should do any work and scripting external to crypto-vm.
 
+## Why crypto challenges specifically?
+
+Crypto challenges are often competely platform independent, and very
+easily re-hosted. Additionally, many newer CTF competitiors find
+crypto problems unapproachable, and having a collection designed to
+make them easy to practice on could help.
+
+That said, building a similar project that includes all problem types,
+or is built for another category would probably be a great idea! Fork
+and build it!
+
 # Adding to crypto-vm
 Adding a new problem to crypto-vm is pretty straight forward.
 
