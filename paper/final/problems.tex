@@ -5,11 +5,26 @@ problems, and expected interactions with the problems, we will now
 outline two different included challenges.
 
 \subsection{Hitcon 2014's rsaha}
-This challenge runs a small server encrypting messages using RSA. The server encrypts random messages and expects the plaintext as input. After succeffully decrypting 10 numbers, the server will give out the flag, which is of course also encrypted. As with many crypto CTF problems, the challenge uses a server primarily to limit the time to decrypt a messages. For each message, the user only has a window of 10 seconds to reply with the plaintext. This prevents any simple brute-force attacks.
+This challenge runs a small server encrypting messages using RSA. The
+server encrypts random messages and expects the plaintext as
+input. After succeffully decrypting 10 numbers, the server will give
+out the flag, which is of course also encrypted. As with many crypto
+CTF problems, the challenge uses a server primarily to limit the time
+to decrypt a messages. For each message, the user only has a window of
+10 seconds to reply with the plaintext. This prevents any simple
+brute-force attacks.
 
-The provided server source code shows how the messages are encrypted. The server uses naive RSA encryption without any padding. For each message, two random primes $p$ and $q$ with increasing bitlength between 50 and 450 bits are generated. The server computes the modulus $n=p\cdot q$ from it and encrypts the message with the public exponent $e=3$: $c_1\equiv m^3 \pmod{b}$. However, the server also returns $c_2\equiv (m+1)^3\pmod{b}$. 
+The provided server source code shows how the messages are
+encrypted. The server uses naive RSA encryption without any
+padding. For each message, two random primes $p$ and $q$ with
+increasing bitlength between 50 and 450 bits are generated. The server
+computes the modulus $n=p\cdot q$ from it and encrypts the message
+with the public exponent $e=3$: $c_1\equiv m^3 \pmod{b}$. However, the
+server also returns $c_2\equiv (m+1)^3\pmod{b}$.
 
-But this allows us to use an attack published by Franklin and Reiter \cite{franklin1995linear}, which works if we have two messages $m_1$ and $m_2$ with $m_1 +1 = m_2$ and three as the public exponent:
+But this allows us to use an attack published by Franklin and Reiter
+\cite{franklin1995linear}, which works if we have two messages $m_1$
+and $m_2$ with $m_1 +1 = m_2$ and three as the public exponent:
 
 \[ \frac{c_2+2c_1-1}{c_2-c_1+2} = \ldots \]
 
