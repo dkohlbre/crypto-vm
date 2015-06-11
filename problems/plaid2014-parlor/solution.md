@@ -1,4 +1,4 @@
-Writeup [here](http://blog.mheistermann.de/2014/04/14/plaidctf-2014-parlor-crypto-250-writeup/)
+Writeup [here](https://fail0verflow.com/blog/2014/plaidctf2014-crypto250-parlor.html)
 
 A cached copy of the solution is available [here](plaid2014-parlor_write-up.pdf).
 
