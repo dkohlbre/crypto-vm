@@ -18,7 +18,9 @@ for p,dirs,files in os.walk("."):
 # build each category
 for cat in categories:
     cfile = open("/var/www/html/"+cat+".html",'w')
-    cdata = open("tmp_cat_"+cat,'r').readlines()
+    with open("tmp_cat_"+cat,'r') as f:
+        cdata = f.readlines()
+    os.remove("tmp_cat_"+cat)
     plist = ''.join(["<a href=\"/"+p.strip()+"/index.html\">"+p.replace("_"," ").strip()+"</a></br>\n" for p in cdata])
     # for now whatever
     args = {'title': cat.replace("_"," "), 'plist': plist}
