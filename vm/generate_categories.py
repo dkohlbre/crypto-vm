@@ -21,7 +21,7 @@ for cat in categories:
     cdata = open("tmp_cat_"+cat,'r').readlines()
     plist = ''.join(["<a href=\"/"+p.strip()+"/index.html\">"+p.replace("_"," ").strip()+"</a></br>\n" for p in cdata])
     # for now whatever
-    args = {'title': cat, 'plist': plist}
+    args = {'title': cat.replace("_"," "), 'plist': plist}
     page = """
 <!DOCTYPE html>
 <html>

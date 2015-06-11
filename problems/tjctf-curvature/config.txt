@@ -1,2 +1,2 @@
-CATEGORY: Eliptic_Curve
+CATEGORY: Elliptic_Curve
 ENABLED: TRUE
