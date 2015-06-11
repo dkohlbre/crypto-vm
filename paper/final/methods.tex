@@ -6,13 +6,22 @@ possible.
 To avoid having to distribute a large virtual machine image file, we
 decided to use Vagrant to build our VM. Vagrant builds and configures
 a virtual machine from a small configuration file. We use an Ubuntu
-14.04 base image that is automatically downloaded when building \cvm{}
-for the first time. We have developed a number of Python and Bash
-scripts that will then generate HTML pages for the available CTF
-problems, configure and run services for problems that require them
-and start a webserver on the VM. Not considering the time required to
-download the base image, it only takes a few seconds until the VM is
-fully provisioned and ready to be used.
+14.04 base image that is automatically downloaded from the official
+sources when building \cvm{} for the first time. We have developed a
+number of Python and Bash scripts that will then generate HTML pages
+for the available CTF problems, configure and run services for
+problems that require them and start a webserver on the VM. Not
+considering the time required to download the base image, it only
+takes a minute or so until the VM is fully provisioned and ready to be
+used. Using Vagrant also allows us to easily update \cvm{} without
+needing to build new images or test compatibility extensively. An
+update to \cvm{} is optional and requires only that users re-run the
+Vagrant provisioning script.
+
+As a final benefit to this design, users can host the VM for many
+users (not just for themselves) by giving away the IP of the machine
+they set \cvm{} up on. This makes hosting \cvm{} for a CTF team to all
+practice on trivial.
 
 \subsection{Problem structure}
 Each CTF problem has a strictly defined structure to allow for
@@ -45,10 +54,16 @@ and should at least include the following items:
     files.
 \end{itemize}
 
+\subsection{Adding Problems}
 To make it easier to add new problems, we have created a setup script
 that guides through the process of adding a new problem to the VM by
-generating a template with all the required files.
+generating a template with all the required files. This includes
+generating the proper init or xinetd scripts for running services, as
+well as generating skeleton files for descriptions and more. Ideally,
+adding a simple problem requires only a few minutes of work after
+running the new problem script.
 
+\subsection{Generating the interface}
 When setting up the VM, the page generation script is executed for
 every problem directory. This script generates a HTML page for each
 problem using a template and the previously described Markdown input
@@ -56,11 +71,16 @@ files. An additional script crawls the port configuration file of the
 problems and generates Vagrant port mappings to forward these from the
 VM to the local host running the VM.
 
+Finally, problems are organized into their self-reported categories,
+and category listing pages are generated. These category pages are
+what is visible to the user on the mainpage.
+
+\subsection{Using the VM}
 To get started with \cvm{} a user only needs a machine running Linux or
 OS X with Vagrant, Python, and VirtualBox installed. Having met those
 requirements, one only needs to clone our repository and run the
 \verb|runme.sh| script. This will then automatically using our scripts
-import, confiugre, and run the VM containing all the challenges. After
+import, configure, and run the VM containing all the challenges. After
 the setup completes, the webserver is started and the \cvm{} is
 accessible on \url{http://localhost:8082}.
 
@@ -71,5 +91,5 @@ or cryptographic libraries that we point to whenever fit for the
 problem. However, the choice of tools is left to the user.
 
 We think that this methodology provides an easy to use and helpful
-ressource to make cryptographic CTF challenges more accesssible for
+resource to make cryptographic CTF challenges more accessible for
 beginners.
