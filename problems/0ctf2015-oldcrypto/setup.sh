@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PROBLEM="0ctf2015-oldcrypto"
-files=("ciphertext" "oldcrypto.py")
+files=("ciphertext" "oldcrypto.py" "write-up.pdf")
 
 # Just copy the data file to the webdir
 for fname in "${files[@]}"

@@ -1,4 +1,4 @@
-Welcome to Crypto vm!
+# Welcome to Crypto vm!
 ========
 
 This is a collection of previously
@@ -6,14 +6,14 @@ used [ctf](https://ctftime.org/ctf-wtf/) problems focused on
 cryptography, math, and related topics.
 
 
-How to use?
+## How to use?
 ===========
 
 Choose a category, then a problem, and work on it!  Each problem comes
 with a set of hints (with suggested readings) and either a full
 solution or a link to one.
 
-What am I supposed to do with a problem?
+## What am I supposed to do with a problem?
 ==========
 
 "Find the flag!"

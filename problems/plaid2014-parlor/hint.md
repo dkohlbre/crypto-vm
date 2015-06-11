@@ -6,6 +6,10 @@ Hints:
 
 Suggested Reading:
 
-* http://en.wikipedia.org/wiki/Collision_attack
-* http://en.wikipedia.org/wiki/Brute-force_attack
-* http://en.wikipedia.org/wiki/Length_extension_attack
+* <http://en.wikipedia.org/wiki/Collision_attack>
+* <http://en.wikipedia.org/wiki/Brute-force_attack>
+* <http://en.wikipedia.org/wiki/Length_extension_attack>
+
+Useful Tools:
+
+* [hashlib](https://docs.python.org/2/library/hashlib.html): A Python library implementing common cryptographic hashing algorithms.

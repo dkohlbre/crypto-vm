@@ -2,7 +2,7 @@
 
 
 PROBLEM="tjctf-curvature"
-files=("redacted-server.py")
+files=("redacted-server.py" "write-up.pdf")
 
 # Just copy the data file to the webdir
 for fname in "${files[@]}"

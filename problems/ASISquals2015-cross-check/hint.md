@@ -8,3 +8,8 @@ Suggested Reading:
 
 * [RSA](https://en.wikipedia.org/wiki/RSA_\(cryptosystem\))
 * [Integer factorization](https://en.wikipedia.org/wiki/Integer_factorization)
+
+Useful Tools:
+
+* [GMPY](http://www.gmpy.org/): A Python library for fast multiprecision arithmetic, very useful for efficient modular arithmetic.
+* [Python Cryptography Toolkit](https://www.dlitz.net/software/pycrypto/api/current/): Provides implementations of standard crypto algorithms and protocols.

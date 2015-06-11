@@ -6,5 +6,9 @@ Hints:
 
 Suggested Reading:
 
-* http://en.wikipedia.org/wiki/RSA_%28cryptosystem%29
-* http://math.arizona.edu/sites/math.arizona.edu/files/webfm/undergrad/uta/Spring12UTATalkSalterbergJake.pdf
+* [RSA cryptosystem](http://en.wikipedia.org/wiki/RSA_%28cryptosystem%29)
+* [An Introduction to the RSA Encryption Method](http://math.arizona.edu/sites/math.arizona.edu/files/webfm/undergrad/uta/Spring12UTATalkSalterbergJake.pdf)
+
+Useful Tools:
+
+* [GMPY](http://www.gmpy.org/): A Python library for fast multiprecision arithmetic, very useful for efficient modular arithmetic.

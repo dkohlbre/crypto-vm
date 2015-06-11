@@ -9,16 +9,16 @@ related CTF challenges.
 
 Crypto-vm is designed to be easy to start and access problems on. You
 will need the following:
-* A linux (ideally, possibly OSX) machine. Not a VM!
-* Vagrant, python, and virtualbox installed.
+* A Linux (ideally, possibly OS X) machine. Not a VM!
+* Vagrant, Python, and VirtualBox installed.
 
 After you've met the requirements, clone this repository and run
 "runme.sh"!  This may take some time, but should automatically import,
 configure, and run the VM containing all of the challenges.  After
 this setup completes, you can visit the server at "localhost:8080".
 
-For some problems it is likely you will want mathmatical tools, such
-as mathmatica or similar. Crypto-vm does not currently supply any
+For some problems it is likely you will want mathematical tools, such
+as Mathmatica or similar. Python with Crypto-vm does not currently supply any
 tools, you should do any work and scripting external to crypto-vm.
 
 # Adding to crypto-vm
@@ -39,10 +39,10 @@ setup either init.d or xinetd configurations.
 Other more complex problem designs are possible, but may not be a good
 fit for crypto-vm.
 
-Please read all of the problems dir readme.
+Please read the Readme in the problems directory for more details.
 
-After completing setup for you problem, testing it (from a clean
-'vagrant up' please!) submit a pull request and we'll add it!
+After completing the setup for you problem, testing it (from a clean
+'vagrant up' please!), submit a pull request and we'll add it!
 
 # Why crypto-vm?
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PROBLEM="ASISquals2015-cross-check"
-files=("all.txt" "cross_check.py")
+files=("all.txt" "cross_check.py" "write-up.pdf")
 
 # Just copy the data file to the webdir
 for fname in "${files[@]}"
