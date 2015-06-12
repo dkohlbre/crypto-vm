@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 
 portlines = open("../problems/ports",'r').readlines()
 
